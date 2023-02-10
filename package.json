@@ -1,7 +1,6 @@
 {
   "homepage": "http://Mohammad-Yazan-Zarzar.github.io/Movie-Home",
-
-  "name": "movie-app",
+  "name": "Movie-Home",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
