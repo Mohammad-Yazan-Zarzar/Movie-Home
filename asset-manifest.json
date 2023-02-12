@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Movie-Home/static/css/main.f775c200.css",
-    "main.js": "/Movie-Home/static/js/main.2268ab75.js",
+    "main.css": "/Movie-Home/static/css/main.dfa18863.css",
+    "main.js": "/Movie-Home/static/js/main.93a92519.js",
     "static/js/787.7c42db31.chunk.js": "/Movie-Home/static/js/787.7c42db31.chunk.js",
     "static/media/mainTrend1.jpg": "/Movie-Home/static/media/mainTrend1.c99eb948f5a8a994fa29.jpg",
     "static/media/harry-potter-hermione-and-ron-gi5aixvd4d26cpij.jpg": "/Movie-Home/static/media/harry-potter-hermione-and-ron-gi5aixvd4d26cpij.dea41a770ed861624d00.jpg",
     "index.html": "/Movie-Home/index.html",
-    "main.f775c200.css.map": "/Movie-Home/static/css/main.f775c200.css.map",
-    "main.2268ab75.js.map": "/Movie-Home/static/js/main.2268ab75.js.map",
+    "main.dfa18863.css.map": "/Movie-Home/static/css/main.dfa18863.css.map",
+    "main.93a92519.js.map": "/Movie-Home/static/js/main.93a92519.js.map",
     "787.7c42db31.chunk.js.map": "/Movie-Home/static/js/787.7c42db31.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f775c200.css",
-    "static/js/main.2268ab75.js"
+    "static/css/main.dfa18863.css",
+    "static/js/main.93a92519.js"
   ]
 }
