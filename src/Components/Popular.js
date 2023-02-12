@@ -10,6 +10,7 @@ import { style } from "@mui/system";
 import img3 from '../images/mainTrend1.jpg'
 import { UserContext } from "../App";
 import YouTube from "../Components/Skeleton";
+import Pcard from "./Pcard";
 const PopularBody=styled.div`
     width: 100%;
     background-color:#2a4747;
@@ -114,7 +115,10 @@ const Popular = () => {
         <SectionMain2>
             <YouTube></YouTube>
             {trendData.map(tr=>(
-                <ECard array={tr}></ECard>
+                <Pcard array={tr} onClick={()=>{
+                    user.setType('tv');
+                    console.log(user.type)
+                }}></Pcard>
             )) }  
 
         </SectionMain2>

@@ -12,7 +12,10 @@ import { rgbToHex } from '@material-ui/core';
 import styled from 'styled-components';
 import {Link}  from "react-router-dom";
 import LoginIcon from '@mui/icons-material/Login';
+import myImage from '../images/logo.png';
+
 const AppBarStyle=styled(AppBar)`
+
   background-color:#122c34 !important;
   box-shadow: 6px 10px #4EA5D9 ;
   color: #44CFCB !important;
@@ -34,7 +37,18 @@ const LinkStyle=styled(Link)`
      color: #44CFCB;
      text-decoration: none;
 
-`
+`;
+const Logo=styled.div`
+    width:50px;
+    height: 50px;
+    background-image: url(${myImage});
+    background-position: center center;
+    background-size:100%;
+    background-repeat: no-repeat;
+    border-radius:25px;
+
+
+`;
 export default function Bar() {
   return (
     <BoxStyle sx={{ flexGrow: 1,backgroundColor:'darkblue'}}>
@@ -52,7 +66,9 @@ export default function Bar() {
           
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <LinkStyle to="/">News</LinkStyle>
+          <LinkStyle to="/Movie-Home"><Logo>
+              {/* <img src='./images/logo.png' alt="Movie-Home"></img> */}
+            </Logo></LinkStyle>
           </Typography>
           <Button color="inherit" ><LinkStyle  to="/Login">Login<LoginIcon></LoginIcon></LinkStyle></Button>
         </Toolbar>

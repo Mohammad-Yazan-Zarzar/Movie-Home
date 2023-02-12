@@ -27,12 +27,14 @@ const CardStyle=styled(Card)`
 export default function DCard(props) {
     const imgUrl='https://www.themoviedb.org/t/p/w500'
   return (
-    <CardStyle sx={{ maxWidth:200,marginLeft:2 ,maxHeight:350,marginRight:2,marginTop:5,backgroundColor:'#122c34',color:'#4ea5d9',minWidth:200}}>
-      <CardActionArea>
+    <CardStyle sx={{ maxWidth:200,marginLeft:2 ,maxHeight:350,marginRight:2,marginTop:5,backgroundColor:'#122c34',color:'#4ea5d9',minWidth:200,cursor:'none'}}>
+      <CardActionArea sx={{cursor:'default' ,":hover":'none'}} >
         <CardMediaStyle
           component="div"
           
-          image={imgUrl+props.array['profile_path']}
+          image={imgUrl+props.array[props.path]}
+          // image={imgUrl+props.array['logo_path']}
+
           alt="green iguana"
           sx={{height:'200px'}}
 

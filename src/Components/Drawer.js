@@ -24,7 +24,7 @@ const LinkStyle=styled(Link)`
 
 `
 export default function TemporaryDrawer() {
-  const links=['/','/Movies','WatchList','Home']
+  const links=['/Movie-Home','/Movies','WatchList','Home']
   const icons=[<HomeIcon></HomeIcon>,<LocalMoviesIcon></LocalMoviesIcon>,<CameraIndoorIcon></CameraIndoorIcon>,<WhatshotIcon></WhatshotIcon>]
   const [state, setState] = React.useState({
     top: false,

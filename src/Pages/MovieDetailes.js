@@ -81,12 +81,37 @@ const Cast=styled.div`
   background: #222;
 }
 `
+const Title=styled.h2`
+  margin-left:10px;
+`
+const SectionStyle=styled.div`
+  background-color:#122c34;
+  color: #44CFCB;
+  min-height: 400px;
+  padding: 5px 5px;
+  /* display:flex; */
+  /* flex-direction:column; */
+  /* align-items:start; */
+  /* justify-content:start; */
+  /* display:flex; */
+
+`
+const SectionStyle2=styled.div`
+  background-color:#2a4747;
+  color: #44CFCB;
+  min-height: 400px;
+  padding: 5px 5px;
+
+
+`
 // /////////////////////////////////////////
 const MovieDetailes = () => {
   const [Image,setImage]=useState('../images/harry-potter-hermione-and-ron-gi5aixvd4d26cpij.jpg');
   const[backdrop_path,setbackdrop_path]=useState('../images/harry-potter-hermione-and-ron-gi5aixvd4d26cpij.jpg');
   const [dCard,setdCard]=useState([])
   const [movieData,setMovieData]=useState([])
+  const [productionCompany,setProductionCompany]=useState([])
+  
   const imgUrl='https://www.themoviedb.org/t/p/w220_and_h330_face'
 
  
@@ -96,7 +121,7 @@ const MovieDetailes = () => {
 
     user.setLoad('yes');
 
-    axios.get(`http://api.themoviedb.org/3/movie/${user.detailes}/credits?api_key=570640b10e7bba620e8de7a7829d94fe`)
+    axios.get(`http://api.themoviedb.org/3/${user.type}/${user.detailes}/credits?api_key=570640b10e7bba620e8de7a7829d94fe`)
     .then(res=>{
 
         console.log(res.data.cast)
@@ -109,7 +134,7 @@ const MovieDetailes = () => {
     }).finally(()=>{
         // user.setLoad('No')
     })
-    axios.get(`http://api.themoviedb.org/3//movie/${user.detailes}?api_key=570640b10e7bba620e8de7a7829d94fe`)
+    axios.get(`http://api.themoviedb.org/3/${user.type}/${user.detailes}?api_key=570640b10e7bba620e8de7a7829d94fe`)
     .then(res=>{
 
         
@@ -118,6 +143,7 @@ const MovieDetailes = () => {
         setMovieData(res.data)
         setImage(imgUrl+res.data.poster_path)
         setbackdrop_path(imgUrl+res.data.backdrop_path)
+        setProductionCompany(res.data.production_companies)
         user.setLoad('No')
         
     })
@@ -137,7 +163,8 @@ const MovieDetailes = () => {
        
         <HeaderCard image={Image}  style={{ backgroundImage:`url(${Image})` }} ></HeaderCard>
         <HeaderContent>
-            <h3>{movieData.title}</h3>
+            <h3>{movieData.title}{movieData.name}</h3>
+
             <h6>{movieData.release_date}</h6>
 
 
@@ -151,12 +178,23 @@ const MovieDetailes = () => {
 
 
       </Heade>
-      <div >
-      <h2>MovieDetailes</h2>
+      <SectionStyle >
+      <Title>Top 10 in Crew</Title>
       <Cast>
             <YouTube></YouTube>
             {dCard.map(tr=>(
-                <Dcard array={tr}></Dcard>
+                <Dcard array={tr} path={'profile_path'}></Dcard>
+                // <h3>{tr['character']}</h3>
+            )) }
+
+      </Cast>
+      </SectionStyle>
+      <SectionStyle2>
+      <Title>production Company</Title>
+      <Cast>
+            <YouTube></YouTube>
+            {productionCompany.map(dr=>(
+                <Dcard  array={dr} path={'logo_path'}></Dcard>
                 // <h3>{tr['character']}</h3>
             )) }
 
@@ -164,37 +202,13 @@ const MovieDetailes = () => {
 
       
 
-      </div>
+      </SectionStyle2>
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      
           
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-          
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-          
-      <br></br>
+     
 
     </>
    

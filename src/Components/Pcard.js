@@ -34,7 +34,7 @@ const LinkStyle=styled(Link)`
      text-decoration: none;
 
 `
-export default function ECard(props) {
+export default function Pcard(props) {
   const user = useContext(UserContext);
 
   const imgUrl='https://www.themoviedb.org/t/p/w220_and_h330_face'
@@ -42,7 +42,7 @@ export default function ECard(props) {
     <CardStyle sx={{ maxWidth:250,marginLeft:2 ,maxHeight:350,marginRight:2,marginTop:5,backgroundColor:'#122c34',color:'#4ea5d9',minWidth:250}}>
       <LinkStyle to="/Movie-Detailes" onClick={()=>{
         user.setDetailes(props.array.id)
-        user.setType('movie')
+        user.setType('tv')
         // user.setGround(imgUrl+props.array.poster_path)
         // user.setGround('yazan')
 

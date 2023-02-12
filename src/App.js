@@ -15,10 +15,11 @@ export const UserContext = createContext();
 function App() {
   const [load, setLoad] = useState('No');
   const[detailes,setDetailes]=useState(550);
+  const[type,setType]=useState('movie')
   const[ground,setGround]=useState('zar')
   return (
     <>
-      <UserContext.Provider value={{load,setLoad,detailes,setDetailes}}>
+      <UserContext.Provider value={{load,setLoad,detailes,setDetailes,type,setType}}>
         {/* ----------- */}
         {/* <Layout></Layout> */}
         {/* <Home></Home> */}
