@@ -9,6 +9,7 @@ import Rate from './Rate';
 import {Link}  from "react-router-dom";
 import { UserContext } from '../App';
 import { useContext } from 'react';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 
 const CardMediaStyle=styled.div`
   width:300px;
@@ -74,7 +75,12 @@ export default function Pcard(props) {
 
       <CardActions>
         <Button size="small" color="primary">
-          Share
+        <PlaylistAddIcon onClick={()=>{
+            user.setAlertOpacity(1)
+            setTimeout(()=>user.setAlertOpacity(0),1000)
+          }}>
+
+          </PlaylistAddIcon>
         </Button>
         {props.array.vote_average/2.0}
         

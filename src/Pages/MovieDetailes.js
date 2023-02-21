@@ -8,8 +8,12 @@ import Dcard from '../Components/Dcard';
 import axios from 'axios';
 const HeaderDetailes=styled.div`
   width:100%;
+
   min-height:70vh;
-  max-height:2000px;
+  height: fit-content;
+
+  /* max-height:100vh; */
+  /* height: max-content; */
 
   /* background-image:url(${props =>props.image}); */
   background-position: center center;
@@ -24,7 +28,9 @@ const HeaderDetailes=styled.div`
 const HeaderCard=styled.div`
     width:200px;
     max-width:40%;
-    height:35vh;
+    margin-top:5px;
+    /* height:35vh; */
+    height: 250px;
     /* left:${props=>props.Location}; */
     background-color:#fff ;
     margin: auto auto;
@@ -41,11 +47,15 @@ const Heade=styled.div`
   display:flex;
   align-items:center;
   min-height:70vh !important;
-  max-height:2000px;
+  max-height:fit-content;
   justify-content:space-around;
   flex-wrap:wrap;
   color: #fff;
   text-align:center;
+  background-position: center center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  opacity:0.8;
 
 
 `;
@@ -104,6 +114,12 @@ const SectionStyle2=styled.div`
 
 
 `
+const Font=styled.span`
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+  color: #fff;
+
+`
 // /////////////////////////////////////////
 const MovieDetailes = () => {
   const [Image,setImage]=useState('../images/harry-potter-hermione-and-ron-gi5aixvd4d26cpij.jpg');
@@ -118,6 +134,7 @@ const MovieDetailes = () => {
   const user = useContext(UserContext);
   const [id,setId]=useState(user.detailes);
   useEffect(()=>{
+    window.scrollTo(0, 0);
 
     user.setLoad('yes');
 
@@ -157,16 +174,19 @@ const MovieDetailes = () => {
 },[user.detailes]);
   return (
     <>
-       <Heade >
-        <HeaderDetailes  style={{ backgroundImage:`url(${Image})` }} >
-        </HeaderDetailes>
+       <Heade style={{ backgroundImage:`url(${Image})` }}>
+        {/* <HeaderDetailes  style={{ backgroundImage:`url(${Image})` }} > */}
+        {/* </HeaderDetailes> */}
        
         <HeaderCard image={Image}  style={{ backgroundImage:`url(${Image})` }} ></HeaderCard>
         <HeaderContent>
-            <h3>{movieData.title}{movieData.name}</h3>
+            <h3><Font>{movieData.title}{movieData.name}</Font></h3>
 
-            <h6>{movieData.release_date}</h6>
-
+            <h6><Font>{movieData.release_date}</Font></h6>
+            <h6><Font>{movieData.first_air_date}</Font></h6>
+            {/* <h6>{movieData.number_of_episodes}</h6> */}
+            {movieData.number_of_episodes!==undefined?<h6><Font>number of episodes: {movieData.number_of_episodes}</Font></h6>:' '}
+            {movieData.number_of_seasons!==undefined?<h6><Font>number of seasons: {movieData.number_of_seasons}</Font></h6>:' '}
 
         </HeaderContent>
         <br></br>

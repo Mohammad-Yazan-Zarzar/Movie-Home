@@ -14,7 +14,8 @@ import Pcard from "./Pcard";
 const PopularBody=styled.div`
     width: 100%;
     background-color:#2a4747;
-    min-height: 500px;
+    /* height: fit-content; */
+    min-height:520px;
 
 `
 const PopularStyle=styled.div`

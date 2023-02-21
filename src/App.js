@@ -8,6 +8,7 @@ import MovieDetailes from "./Pages/MovieDetailes";
 import WatchList from "./Pages/WatchList";
 import NoPage from "./Pages/NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CAlert from "./Components/Alert";
 
 export const UserContext = createContext();
 
@@ -17,9 +18,10 @@ function App() {
   const[detailes,setDetailes]=useState(550);
   const[type,setType]=useState('movie')
   const[ground,setGround]=useState('zar')
+  const[AlertOpacity,setAlertOpacity]=useState(0);
   return (
     <>
-      <UserContext.Provider value={{load,setLoad,detailes,setDetailes,type,setType}}>
+      <UserContext.Provider value={{load,setLoad,detailes,setDetailes,type,setType,AlertOpacity,setAlertOpacity}}>
         {/* ----------- */}
         {/* <Layout></Layout> */}
         {/* <Home></Home> */}
@@ -34,11 +36,12 @@ function App() {
                 <Route path="Movies" element={<Movies />} />
                 <Route path="Movie-Detailes" element={<MovieDetailes />} />
                 <Route path="WatchList" element={<WatchList />} />
-
+                <Route path="Movie-Home/trend" element={<Home><Trending></Trending></Home>} ></Route>
                 <Route path="*" element={<NoPage />} />
               </Route>
             </Routes>
         </BrowserRouter>
+        <CAlert></CAlert>
       </UserContext.Provider>
 
     </>

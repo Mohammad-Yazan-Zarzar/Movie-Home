@@ -93,7 +93,7 @@ const Trending = () => {
     console.log('state',trendData)
   return (
 
-    <TrendingStyle>
+    <TrendingStyle id="trend">
 
         {/* <h1>{user.load}</h1> */}
 

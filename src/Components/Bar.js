@@ -12,7 +12,7 @@ import { rgbToHex } from '@material-ui/core';
 import styled from 'styled-components';
 import {Link}  from "react-router-dom";
 import LoginIcon from '@mui/icons-material/Login';
-import myImage from '../images/logo.png';
+import myImage from '../images/logo2.png';
 
 const AppBarStyle=styled(AppBar)`
 

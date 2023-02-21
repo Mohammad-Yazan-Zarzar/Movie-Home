@@ -5,6 +5,7 @@ import Main from '../Components/Main';
 import styled from 'styled-components';
 import Trending from './Trending';
 import Popular from '../Components/Popular';
+import CAlert from '../Components/Alert';
 const Home = () => {
   return (
     <>
@@ -20,6 +21,7 @@ const Home = () => {
       
       <br></br>
       {/* <Popular/> */}
+      {/* <CAlert></CAlert> */}
 
     </>
     

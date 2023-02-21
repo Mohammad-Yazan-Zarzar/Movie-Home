@@ -24,7 +24,7 @@ const LinkStyle=styled(Link)`
 
 `
 export default function TemporaryDrawer() {
-  const links=['/Movie-Home','/Movies','WatchList','Home']
+  const links=['/Movie-Home','/Movies','WatchList','/Movie-Home/trend']
   const icons=[<HomeIcon></HomeIcon>,<LocalMoviesIcon></LocalMoviesIcon>,<CameraIndoorIcon></CameraIndoorIcon>,<WhatshotIcon></WhatshotIcon>]
   const [state, setState] = React.useState({
     top: false,
@@ -43,13 +43,13 @@ export default function TemporaryDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,backgroundColor:'#224870' }}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,backgroundColor:'#224870',height:'100vh' }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {['Home', 'Movies', 'Watch List', 'Trend'].map((text, index) => (
+      <List sx={{}} >
+        {['Home', 'Movies', 'Watch List'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <LinkStyle to={links[index]}>
             <ListItemButton>
@@ -64,7 +64,7 @@ export default function TemporaryDrawer() {
         ))}
       </List>
       <Divider />
-      <List>
+      {/* <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -75,7 +75,7 @@ export default function TemporaryDrawer() {
             </ListItemButton>
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </Box>
   );
 
