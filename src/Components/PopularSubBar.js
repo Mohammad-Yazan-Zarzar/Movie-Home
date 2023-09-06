@@ -68,7 +68,10 @@ const user = useContext(UserContext);
 const getTopRate=()=>{
     setAnime('100px')
     user.setLoad('yes');
-    axios.get('https://api.themoviedb.org/3/tv/top_rated?api_key=570640b10e7bba620e8de7a7829d94fe')
+    axios.get('https://api.themoviedb.org/3/tv/top_rated?api_key=570640b10e7bba620e8de7a7829d94fe',{
+            headers: {
+                "Content-Type": "application/json"
+            }})
         .then(res=>{
             console.log(res.data.results)
             props.setTrend(res.data.results)
@@ -84,7 +87,10 @@ const getTv=()=>{
     setAnime('0px')
     user.setLoad('yes');
 
-    axios.get('https://api.themoviedb.org/3/tv/popular?api_key=570640b10e7bba620e8de7a7829d94fe')
+    axios.get('https://api.themoviedb.org/3/tv/popular?api_key=570640b10e7bba620e8de7a7829d94fe',{
+            headers: {
+                "Content-Type": "application/json"
+            }})
     .then(res=>{
         console.log(res.data.results)
         props.setTrend(res.data.results)

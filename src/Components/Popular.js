@@ -80,7 +80,10 @@ const Popular = () => {
     useEffect(()=>{
         user.setLoad('yes');
 
-        axios.get('https://api.themoviedb.org/3/tv/popular?api_key=570640b10e7bba620e8de7a7829d94fe')
+        axios.get('https://api.themoviedb.org/3/tv/popular?api_key=570640b10e7bba620e8de7a7829d94fe',{
+            headers: {
+                "Content-Type": "application/json"
+            }})
         .then(res=>{
 
             console.log(res.data.results)

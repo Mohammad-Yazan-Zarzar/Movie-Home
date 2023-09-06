@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Home.style'
+// import Header from './Home.style'
 import Bar from '../Components/Bar'
 import Main from '../Components/Main';
 import styled from 'styled-components';
@@ -10,10 +10,10 @@ const Home = () => {
   return (
     <>
     <div>
-    <Header>
+    {/* <Header> */}
         {/* <Bar></Bar> */}
         <Main></Main>
-      </Header>
+      {/* </Header> */}
       <Trending/>
 
     </div>
