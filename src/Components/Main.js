@@ -75,7 +75,7 @@ const Main = () => {
   console.log(window.screen.width)
   // getTrending()
     return (
-      <MainStyleMd className='main'  >
+      <MainStyleMd   >
         {/* <Grid container spacing={2}> */}
         {/* <Grid item xs={12} md={2}> */}
         <HeadeWelcome>
