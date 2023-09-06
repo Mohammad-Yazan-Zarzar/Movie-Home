@@ -11,6 +11,8 @@ body {
   padding: 0;
   /* color: rgb(red, green, blue); */
   background-color:#122c34 ;
+  overflow-x: hidden;
+  /* position: relative; */
   /* overflow-y: ; */
 }
 
@@ -22,6 +24,7 @@ code {
 /* ........ */
 body::-webkit-scrollbar {
   width: 0.1em;
+
 }
  
 body::-webkit-scrollbar-track {
