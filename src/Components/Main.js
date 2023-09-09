@@ -7,7 +7,7 @@ import { getTrending } from '../Functions/getTrending';
 import Grid from '@mui/material/Grid';
 const img2 ='https://image.tmdb.org/t/p/w500/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg';
 
-const imageUrl='./harry-potter-hermione-and-ron-gi5aixvd4d26cpij.jpg'
+// const imageUrl='./harry-potter-hermione-and-ron-gi5aixvd4d26cpij.jpg'
 const MainStyleMd=styled.div`
     /* background-color:#224870; */
     background-color:#2a4747;

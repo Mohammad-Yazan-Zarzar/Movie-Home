@@ -194,23 +194,26 @@ height: 100%;
 /* bottom: 0px; */
 animation: ${btnAnimL} 1s linear infinite;
   animation-delay: .25s
-`
+`;
+const v=()=>{
+  console.log('jfvbfjbvbfbv')
+}
 const Login = () => {
   return (
     <LoginPage>
         <H2>Login</H2>
         <Form>
-          <UserBox className="user-box">
+          <UserBox >
             <Input type='text' name='' required></Input>
               
             <Label>Username</Label>
           </UserBox>
-          <UserBox className="user-box">
+          <UserBox >
             {/* <input type="password" name="" required=""> */}
             <Input type='password' name='' required ></Input>
             <Label>Password</Label>
           </UserBox>
-          <A href="#">
+          <A href='#' onClick={()=>console.log('submit')}>
             <SpanT></SpanT>
             <SpanR></SpanR>
             <SpanB></SpanB>
