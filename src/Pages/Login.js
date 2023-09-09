@@ -57,7 +57,7 @@ const Input=styled.input`
   color: #fff;
   font-weight: bold;
   font-size: 18px;
-  :focus~Label{
+  &:focus~Label{
     /* background-color: #fff; */
     /* color: #222; */
     top: -20px;
@@ -72,7 +72,7 @@ const Input=styled.input`
   :checked~Label{
     color: red;
   } */
-  :valid~Label{
+  &:valid~Label{
     top: -20px;
     color: #44CFCB;
   }
@@ -97,7 +97,7 @@ const A=styled.a`
   transition: 0.8s;
   position: relative;
   overflow: hidden;
-  :hover{
+  &:hover{
     background-color: #44cfcb;
     color: #fff;
     box-shadow: 0 0 5px #03e9f4,
